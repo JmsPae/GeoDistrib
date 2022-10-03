@@ -8,7 +8,7 @@ Unzip the repository to a folder of choice, then navigate to the base directory 
 This little tool came about primarily to distribute population statistics from a population grid to individual building polygons for a simulation project. Population data per household is difficult to come by and I didn't need anything too precise so this seemed like a decent compromise. 
 
 ## Functionality
-GeoDistrib is currently configured as a command line tool with basic functionality. You can either check the example folder or `python3 -m geodistrib --help`
+GeoDistrib is currently configured as a command line tool with basic functionality. You can either check the [example](https://github.com/JmsPae/GeoDistrib/tree/main/example) folder or `python3 -m geodistrib --help`
 
 What features receive the statistics/data from which source cell is currently decided by centroid.
 
