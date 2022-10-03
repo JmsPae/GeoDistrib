@@ -1,3 +1,4 @@
 typer==0.6.1
 fiona==1.8.21
 shapely==1.8.4
+setuptools==59.6.0
