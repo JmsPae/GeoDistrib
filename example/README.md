@@ -1,5 +1,11 @@
 # Example
-This example contains open data from Statistics Sweden (Statistiska Centralbyrån) and Gävle municipality. The data sources are in Swedish, so here's a description of the files and their attributes.
+This example contains open data from Statistics Sweden (Statistiska Centralbyrån) and Gävle municipality. The data sources are in Swedish, so I've included a description of the files and their attributes.
+
+The goal of this example is to distribute the field **BefTotalt** from **Population_1km_211231_3006** to the building polygons in **residential_buildings** weighted by the **AREA** attribute.
+
+Navigate to this folder in your command line and enter the following command:
+
+`python3 -m geodistrib -src Population_1km_211231_3006.gpkg -dst residential_buildings.gpkg -srcAttrib Beftotalt -dstWeight AREA -output out.gpkg`
 
 # Files
 
