@@ -1,4 +1,4 @@
-import json
+import time
 import fiona
 from fiona import Collection
 from shapely.geometry import shape, Point
@@ -12,14 +12,16 @@ def distribute(sourceData: Collection, destData: Collection, attribute: str, wei
     outputMeta = destData.meta
     outputMeta['schema']['properties'][attribute] = sourceData.meta['schema']['properties'][attribute]
     output = fiona.open(outputDir, 'w', **outputMeta)
-    
+    print("Processing...")
+    startTime = time.time()
+
     for sourceFeature in sourceData:
         sourceGeom = shape(sourceFeature['geometry'])
 
         #Filter destination features by intersection, then centroid
         destFeatureList = [destFeature for destFeature in destData.filter(mask=sourceFeature['geometry']) if filter(sourceGeom, destFeature) == True]
         
-        
+
         numFeatures = len(destFeatureList)  
         sourceAttribute = sourceFeature['properties'][attribute]
 
@@ -32,7 +34,7 @@ def distribute(sourceData: Collection, destData: Collection, attribute: str, wei
 
         output.writerecords(destFeatureList);
 
-        print("Processed", numFeatures)
+    print("Done after", round(time.time() - startTime, 3), "seconds")
 
     output.flush()
     output.close()
