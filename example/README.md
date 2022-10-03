@@ -34,7 +34,7 @@ Section of Statistics Sweden's 1x1km population statistics covering the study ar
 * Ruta - Statistics Sweden's own Cell ID.
 * Man - Male population.
 * Kvinna - Female population.
-* BefTotalt - Total population.
+* Beftotalt - Total population.
 
 # Data sources
 * basemap_buildings - processed version of [baskarta_byggnader](https://www.gavle.se/kommunens-service/kommun-och-politik/statistik-fakta-och-oppna-data/oppna-data/datakatalog/data/#esc_entry=20&esc_context=1).

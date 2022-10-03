@@ -1,3 +1,4 @@
+from nis import cat
 import fiona
 import typer
 from geodistrib import distribute
@@ -9,6 +10,10 @@ def main(sourceDir: str = typer.Option(..., "-src", help="Source geodata"),
          outputDir: str = typer.Option(..., "-output", help="Output file")):
     src = fiona.open(sourceDir)
     dst = fiona.open(destDir)
+
+    if (src.meta['crs'] != dst.meta['crs']):
+        print("src and dst CRS don't match!")
+        raise typer.Exit()
 
     distribute(src, dst, attribute, weight, outputDir)
 
