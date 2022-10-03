@@ -1,6 +1,5 @@
 import fiona
 import typer
-from shapely.geometry import shape, Point
 from geodistrib import distribute
 
 def main(sourceDir: str = typer.Option(..., "-src", help="Source geodata"),
