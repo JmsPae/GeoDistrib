@@ -1,20 +1,14 @@
-from code import interact
 import json
 import fiona
 from fiona import Collection
 from shapely.geometry import shape, Point
-
-def loadConfig(dir: str):
-    f = open(dir)
-    config = json.load(f)
-
-    f.close()
 
 def filter(sourceGeom, destFeature):
     destGeom = shape(destFeature['geometry'])
     return sourceGeom.contains(destGeom.centroid)
 
 def distribute(sourceData: Collection, destData: Collection, attribute: str, weight: str, outputDir: str):
+    # Copy metadata from the original destination file to the output
     outputMeta = destData.meta
     outputMeta['schema']['properties'][attribute] = sourceData.meta['schema']['properties'][attribute]
     output = fiona.open(outputDir, 'w', **outputMeta)
@@ -25,9 +19,9 @@ def distribute(sourceData: Collection, destData: Collection, attribute: str, wei
         #Filter destination features by intersection, then centroid
         destFeatureList = [destFeature for destFeature in destData.filter(mask=sourceFeature['geometry']) if filter(sourceGeom, destFeature) == True]
         
+        
         numFeatures = len(destFeatureList)  
         sourceAttribute = sourceFeature['properties'][attribute]
-
 
         weightSum = 0
         for destFeature in destFeatureList:
