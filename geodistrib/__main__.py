@@ -3,11 +3,11 @@ import typer
 from shapely.geometry import shape, Point
 from geodistrib import distribute
 
-def main(sourceDir: str = typer.Option(..., "-src"),
-         destDir: str = typer.Option(..., "-dst"), 
-         attribute: str = typer.Option(..., "-srcAttrib"),
-         weight: str = typer.Option(..., "-dstWeight"), 
-         outputDir: str = typer.Option(..., "-output")):
+def main(sourceDir: str = typer.Option(..., "-src", help="Source geodata"),
+         destDir: str = typer.Option(..., "-dst", help="Destination geodata"), 
+         attribute: str = typer.Option(..., "-srcAttrib", help="Source dataset attribute to be distributed among contained destination features"),
+         weight: str = typer.Option(..., "-dstWeight", help="Destination dataset weights for source attribute distribution"), 
+         outputDir: str = typer.Option(..., "-output", help="Output file")):
     src = fiona.open(sourceDir)
     dst = fiona.open(destDir)
 
