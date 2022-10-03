@@ -1,6 +1,9 @@
 # GeoDistrib
 Basic tool for interpolating cell/zonal statistics among contained features based on a user defined weight attribute.
 
+## Install
+Unzip the repository to a folder of choice, then navigate to the base directory of the repo and run `pip install .`
+
 ## Background
 This little tool came about primarily to distribute population statistics from a population grid to individual building polygons for a simulation project. Population data per household is difficult to come by and I didn't need anything too precise so this seemed like a decent compromise. 
 
