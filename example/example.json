@@ -1,0 +1,16 @@
+{
+    "distribute" : {
+        "sources" : {
+            "./Population_1km_211231_3006.gpkg" : {
+                "attributes" : [ "Man", "Kvinna" ]
+            }
+        },
+        
+        "destinations" : {
+            "./residential_buildings.gpkg" : {
+                "weight" : "AREA",
+                "output" : "./residential_buildings_population.gpkg"
+            }
+        }
+    }
+}

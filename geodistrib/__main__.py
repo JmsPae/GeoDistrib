@@ -1,13 +1,17 @@
 from nis import cat
 import fiona
 import typer
-from geodistrib import distribute
+from geodistrib import distribute, interpretPipeline
 
-def main(sourceDir: str = typer.Option(..., "-src", help="Source geodata"),
-         destDir: str = typer.Option(..., "-dst", help="Destination geodata"), 
-         attribute: str = typer.Option(..., "-srcAttrib", help="Source dataset attribute to be distributed among contained destination features"),
-         weight: str = typer.Option(..., "-dstWeight", help="Destination dataset weights for source attribute distribution"), 
-         outputDir: str = typer.Option(..., "-output", help="Output file")):
+app = typer.Typer()
+
+
+@app.command()
+def distribute(sourceDir: str = typer.Option(..., "-src", help="Source geodata file"),
+               destDir: str = typer.Option(..., "-dst", help="Destination geodata file"), 
+               attribute: str = typer.Option(..., "-srcAttrib", help="Source dataset attribute to be distributed among contained destination features"),
+               weight: str = typer.Option(..., "-dstWeight", help="Destination dataset weights for source attribute distribution"), 
+               outputDir: str = typer.Option(..., "-output", help="Output file")):
     src = fiona.open(sourceDir)
     dst = fiona.open(destDir)
 
@@ -19,5 +23,9 @@ def main(sourceDir: str = typer.Option(..., "-src", help="Source geodata"),
 
     src.close()
     dst.close()
+
+@app.command()
+def pipeline(pipelineDir: str = typer.Option(..., "-i", help="Pipeline JSON file")):
+    interpretPipeline(pipelineDir)
     
-typer.run(main)
+app()
