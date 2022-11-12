@@ -16,5 +16,3 @@ What features receive the statistics/data from which source cell is currently de
 The present tool was designed (not really *designed*, but it sounds clever) for a very specific purpose at the time. At whilst that makes this a very simple tool, it has the potential to become greatly expanded in complexity, and thus, hopefully, functionality. Performance isn't fantastic either.
 
 The current plan is to add a json pipeline input, which lets the user define what and how the data from any number of fields will be distributed to any destination features. 
-
-This is my first proper open source project, but feel free to make a pull request.
