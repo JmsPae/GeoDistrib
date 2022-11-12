@@ -1,6 +1,9 @@
 # GeoDistrib
 Basic tool for interpolating cell/zonal statistics among contained features based on a user defined weight attribute.
 
+## Requirements
+* GDAL Installation
+
 ## Install
 Unzip the repository to a folder of choice, then navigate to the base directory of the repo and run `pip install .`
 
