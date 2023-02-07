@@ -16,6 +16,6 @@ GeoDistrib is currently configured as a command line tool with basic functionali
 What features receive the statistics/data from which source cell is currently decided by centroid.
 
 ## Future
-The present tool was designed (not really *designed*, but it sounds clever) for a very specific purpose at the time. At whilst that makes this a very simple tool, it has the potential to become greatly expanded in complexity, and thus, hopefully, functionality. Performance isn't fantastic either.
+The present tool was designed (not really *designed*, but it sounds clever) for a very specific purpose at the time. At whilst that makes this a very simple tool, it has the potential to be modestly expanded in functionality.
 
 The current plan is to add a json pipeline input, which lets the user define what and how the data from any number of fields will be distributed to any destination features. 
