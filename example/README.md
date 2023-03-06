@@ -1,7 +1,7 @@
 # Example
 This example contains open data from Statistics Sweden (Statistiska Centralbyrån) and Gävle municipality. The data sources are in Swedish, so I've included a description of the files and their attributes.
 
-The goal of this example is to distribute the field **BefTotalt** (total population) from **Population_1km_211231_3006** to the building polygons in **residential_buildings** weighted by the **AREA** attribute.
+The goal of this example is to distribute the field **BefTotalt** (total population) from **Population_1km_211231_3006** to the building polygons in **residential_buildings** weighted by the **AREA** attribute. Ideally the distribution would be based on building volume instead of area, but it works well enough as a simple example.
 
 Navigate to this folder in your command line and enter the following command:
 
