@@ -1,5 +1,5 @@
 # GeoDistrib
-Basic tool for interpolating cell/zonal statistics among contained features based on a user defined weight attribute.
+Basic tool for distributing cell/zonal statistics among contained features based on a user defined weight attribute.
 
 ## Requirements
 * GDAL Installation
